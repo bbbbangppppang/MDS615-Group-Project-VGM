@@ -1,4 +1,8 @@
 # MDS615-Group-Project
+
+# this is a school project
+
+
 # Web Scaffold Project
 
 This project provides a basic scaffold for a web application. The scaffold includes a simple HTML structure, basic CSS for styling, and JavaScript for navigation. Students will enhance this scaffold by adding various features such as a calendar and a music player.
