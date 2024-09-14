@@ -4,32 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>留言功能</title>
+    <title>反馈表单示例</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- 其他部分 -->
+
+    <!-- xxx: music part -->
+    <section id="music" style="display:none;" class="container p-5">
+        <h2 class="p-4">Music & Video Player</h2>
+        <div class="music-player-container">
+
+            <!-- 音乐播放器 -->
+            <h3>Music Player:</h3>
+            <audio id="music-player" controls>
+                <source src="./music/too-late.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="playlist mt-3">
+                <h5>Select a Song:</h5>
+                <ul id="playlist" class="list-group d-md-flex">
+                    <li class="list-group-item" data-src="./music/naruto.mp3">naruto</li>
+                    <li class="list-group-item" data-src="./music/food.mp3">food</li>
+                    <li class="list-group-item" data-src="./music/too-late.mp3">too late</li>
+                </ul>
+            </div>
+
+            <!-- 视频播放器 -->
+            <h3 class="mt-4">Video Player:</h3>
+            <div class="video-container">
+                <div id="video-player"></div>
+                <div class="playlist mt-3">
+                    <h5>Select a Video:</h5>
+                    <ul id="video-playlist" class="list-group d-md-flex">
+                        <li class="list-group-item" data-src="https://www.youtube.com/watch?v=YASXk7Pu8HA">Black Myth
+                            Wukong</li>
+                        <li class="list-group-item" data-src="https://www.youtube.com/watch?v=ILXrya5GJiY">Apologize
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- xxx: feedback part -->
     <div class="container mt-5">
-        <h2>Message Board2</h2>
-        <form id="commentForm">
+        <h2>Feedback</h2>
+        <form id="commentForm" action="https://formspree.io/f/meojwznk" method="POST">
             <div class="mb-3">
-                <label for="name" class="form-label">name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Please enter your name" required>
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please enter your name"
+                    required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Please enter your email address for feedback" required>
+                <input type="email" class="form-control" id="email" name="email"
+                    placeholder="Please enter your email address for feedback" required>
             </div>
             <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Please leave your message" required></textarea>
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="3"
+                    placeholder="Please leave your message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="successMessage" class="alert alert-success mt-3" style="display:none;">Successfully!</div>
+        <div id="successMessage" class="alert alert-success mt-3" style="display:none;">Successfully submitted your
+            feedback!</div>
     </div>
 
-
+    <script src="scripts.js"></script>
 </body>
 
 </html>
